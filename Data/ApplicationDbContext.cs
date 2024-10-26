@@ -11,4 +11,5 @@ public class ApplicationDbContext : IdentityDbContext
     }
 
     public DbSet<App2demo.Models.Cliente> DataCliente { get; set; }
+    public DbSet<App2demo.Models.Contacto> DataContacto { get; set; }
 }
