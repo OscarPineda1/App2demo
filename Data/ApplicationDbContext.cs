@@ -9,4 +9,6 @@ public class ApplicationDbContext : IdentityDbContext
         : base(options)
     {
     }
+
+    public DbSet<App2demo.Models.Cliente> DataCliente { get; set; }
 }
