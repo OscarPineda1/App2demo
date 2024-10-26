@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\App2demo.bundle.scp.css"
     },
     {
+      "Id": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\wwwroot\\Dockerfile",
+      "PackagePath": "staticwebassets"
+    },
+    {
       "Id": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

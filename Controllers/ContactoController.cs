@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using App2demo.Data;
 using App2demo.Models;
+using App2demo.ViewModel;
 
 namespace App2demo.Controllers
 {
@@ -23,14 +24,25 @@ namespace App2demo.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var miscontactos = from econtactos in _context.DataContacto select econtactos;
+            var viewModel = new ContactoViewModel{
+                FormContacto = new Contacto(),
+                ListContactos = miscontactos
+            };
+            return View(miscontactos.ToList());
         }
 
         [HttpPost]
-        public IActionResult Enviar(Contacto objContacto)
+        public IActionResult Enviar(ContactoViewModel viewModel)
         {
             _logger.LogDebug("Ingreso al enviar mensaje");
-                _context.Add(objContacto);
+
+            var contacto = new Contacto{
+                Name = viewModel.FormContacto.Name,
+                Email = viewModel.FormContacto.Email,
+                Mesagge = viewModel.FormContacto.Mesagge
+            };
+                _context.Add(contacto);
                 _context.SaveChanges();
                 ViewData["Message"] = "Se registro el contacto";
             return View("Index");

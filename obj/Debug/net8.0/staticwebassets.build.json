@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "eYGeTrnrt1/YSnQDiC1c3+/wqxCDY67htiHXkmoDCF8=",
+  "Hash": "LXukgsAtiLpoDhRV7m2ErcZ0Imtf4EwxDU+OccWQ7Uo=",
   "Source": "App2demo",
   "BasePath": "_content/App2demo",
   "Mode": "Default",
@@ -1212,6 +1212,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\wwwroot\\Dockerfile",
+      "SourceId": "App2demo",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\wwwroot\\",
+      "BasePath": "_content/App2demo",
+      "RelativePath": "Dockerfile",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Dockerfile"
     },
     {
       "Identity": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\wwwroot\\favicon.ico",
