@@ -24,12 +24,14 @@ namespace App2demo.Controllers
 
         public IActionResult Index()
         {
-            var miscontactos = from econtactos in _context.DataContacto select econtactos;
+            var miscontactos = from o in _context.DataContacto select o;
+            _logger.LogDebug("contactos {miscontactos}", miscontactos);
             var viewModel = new ContactoViewModel{
                 FormContacto = new Contacto(),
                 ListContactos = miscontactos
             };
-            return View(miscontactos.ToList());
+            _logger.LogDebug("viewModel {viewModel}", viewModel);
+            return View(viewModel);
         }
 
         [HttpPost]
