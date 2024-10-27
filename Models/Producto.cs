@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 namespace App2demo.Models
 {
+    [Table("t_producto")]
     public class Producto
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
