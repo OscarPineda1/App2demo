@@ -37,6 +37,7 @@ D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.EntityFramewor
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Design.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
@@ -268,4 +269,3 @@ D:\USMP\CURSOS\PROGRAMACION 1\App2demo\obj\Debug\net8.0\refint\App2demo.dll
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\obj\Debug\net8.0\App2demo.pdb
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\obj\Debug\net8.0\App2demo.genruntimeconfig.cache
 D:\USMP\CURSOS\PROGRAMACION 1\App2demo\obj\Debug\net8.0\ref\App2demo.dll
-D:\USMP\CURSOS\PROGRAMACION 1\App2demo\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
