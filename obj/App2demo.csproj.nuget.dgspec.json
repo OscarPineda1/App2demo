@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj": {}
+    "d:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj": {}
   },
   "projects": {
-    "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj": {
+    "d:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj",
+        "projectUniqueName": "d:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj",
         "projectName": "App2demo",
-        "projectPath": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj",
+        "projectPath": "d:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\App2demo.csproj",
         "packagesPath": "C:\\Users\\USER\\.nuget\\packages\\",
-        "outputPath": "D:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\obj\\",
+        "outputPath": "d:\\USMP\\CURSOS\\PROGRAMACION 1\\App2demo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\USER\\AppData\\Roaming\\NuGet\\NuGet.Config"
