@@ -20,31 +20,31 @@ namespace App2demo.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly ApplicationDbContext _context;
 
-        public CarritoController(ILogger<CarritoController> logger, UserManager<IdentityUser> userManager,ApplicationDbContext context )
+
+        public CarritoController(ILogger<CarritoController> logger,
+            UserManager<IdentityUser> userManager,
+            ApplicationDbContext context)
         {
             _logger = logger;
             _userManager = userManager;
             _context = context;
-
         }
 
         public IActionResult Index()
         {
             List<Carrito> carrito = Helper.SessionExtensions.Get<List<Carrito>>(HttpContext.Session, "carritoSesion");
             if(carrito == null){
-                carrito = new List<Carrito>();
+                    carrito = new List<Carrito>();
             }
             return View(carrito);
         }
 
-        public async Task<IActionResult> Add(int? id)
-        {
+        public async Task<IActionResult> Add(long? id){
             var userName = _userManager.GetUserName(User);
-            if (userName == null)
-            {
+            if(userName == null){
                 _logger.LogInformation("No existe usuario");
-                ViewData["Message"] = "Porfavor debe loguearse antes de agregar un producto";
-                return RedirectToAction("Index", "Home");
+                ViewData["Message"] = "Por favor debe loguearse antes de agregar un producto";
+                return RedirectToAction("Index","Catalogo");
             }else{
                 //obtengo el carrito de memoria
                 List<Carrito> carrito = Helper.SessionExtensions.Get<List<Carrito>>(HttpContext.Session, "carritoSesion");
@@ -58,12 +58,14 @@ namespace App2demo.Controllers
                 itemCarrito.UserName = userName;
                 itemCarrito.Cantidad = 1;
                 carrito.Add(itemCarrito);
-                Helper.SessionExtensions.Set<List<Carrito>>(HttpContext.Session, "carritoSesion", carrito);
-                ViewData["Message"] = "Se agrego al carrito";
+                //seteo el carrito en memoria
+                Helper.SessionExtensions.Set<List<Carrito>>(HttpContext.Session, "carritoSesion",carrito);
+                ViewData["Message"] = "Se Agrego al carrito";
                 _logger.LogInformation("Se agrego un producto al carrito");
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index","Catalogo");
             }
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

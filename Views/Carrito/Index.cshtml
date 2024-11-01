@@ -1,5 +1,4 @@
 @model IEnumerable<App2demo.Models.Carrito>
-
 <h1>@ViewData["Title"]</h1>
 
 
@@ -10,7 +9,7 @@
                 Nombre
             </th>
             <th>
-                Cantidad
+               Cantidad
             </th>
             <th>
                 Precio
@@ -19,7 +18,7 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
+ @foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Producto.Nombre)

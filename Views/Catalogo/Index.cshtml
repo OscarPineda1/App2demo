@@ -1,12 +1,10 @@
-@model dynamic;
+@model App2demo.ViewModels.CatalogoViewModel;
 @using System.Collections.Generic;
 
 @{
     ViewData["Title"] = "Catalogo";
-    IEnumerable<App2demo.Models.Categoria> categorias = new List<Categoria>();
-    IEnumerable<App2demo.Models.Producto> catalogos = new List<Producto>();
-    categorias = @Model.itemCategorias;
-    catalogos = @Model.itemCatalogos;
+    IEnumerable<App2demo.Models.Categoria> categorias = Model.itemCategorias;
+    IEnumerable<App2demo.Models.Producto> catalogos = Model.itemCatalogos;
 }
 
 <h1>@ViewData["Title"]</h1>
@@ -15,7 +13,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-            @foreach (Categoria item in Model.itemCategorias) {
+            @foreach (var item in categorias) {
                 <li class="nav-item">
                     <a class="nav-link" href="#">@Html.DisplayFor(modelItem => item.Nombre)</a>
                 </li>
@@ -26,7 +24,7 @@
     <div class="col">
         <div id="products" class="mb-3">
         <div class="row">
-            @foreach (Producto item in Model.itemCatalogos) {
+            @foreach (var item in catalogos) {
             <div class="col-sm-4">
             <div class="card mb-3">
                 <div class="card-body">
@@ -38,7 +36,7 @@
                 <h5 class="card-title">@Html.DisplayFor(modelItem => item.Nombre)</h5>
                     <p class="card-text">@Html.DisplayFor(modelItem => item.Precio)</p>
                     <a class="btn btn-primary" asp-controller="Carrito" asp-action="Add" asp-route-id="@item.Id">Add</a>
-                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.Id">View</a>
+                    <a class="btn btn-info" asp-controller="Catalogo" asp-action="Details" asp-route-id="@item.Id">View</a>
                 </div>
             </div>
             </div>

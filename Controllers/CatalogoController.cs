@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using App2demo.Data;
+using App2demo.ViewModels;
 using System.Dynamic;
 
 namespace App2demo.Controllers
@@ -23,12 +24,12 @@ namespace App2demo.Controllers
 
         public IActionResult Index()
         {
-            var categorias = from o in _context.DataCategoria select o;
-            var catalogos = from o in _context.DataProducto select o;
-            dynamic model = new ExpandoObject();
-            model.itemsCategorias = categorias;
-            model.itemsCatalogos = catalogos;
-            return View(catalogos);
+            var viewModel = new CatalogoViewModel
+            {
+                itemCategorias = _context.DataCategoria.ToList(),
+                itemCatalogos = _context.DataProducto.ToList()
+            };
+            return View(viewModel);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
