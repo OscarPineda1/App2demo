@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using App2demo.Data;
 using App2demo.Models;
 using App2demo.ViewModel;
+using App2demo.Helper;
 
 namespace App2demo.Controllers
 {
@@ -16,7 +17,7 @@ namespace App2demo.Controllers
         private readonly ILogger<ContactoController> _logger;
         private readonly ApplicationDbContext _context;
 
-        public ContactoController(ILogger<ContactoController> logger, ApplicationDbContext context)
+        public ContactoController(ILogger<ContactoController> logger,ApplicationDbContext context)
         {
             _logger = logger;
             _context = context;
@@ -35,18 +36,31 @@ namespace App2demo.Controllers
         }
 
         [HttpPost]
-        public IActionResult Enviar(ContactoViewModel viewModel)
+        public async Task<IActionResult> Enviar(ContactoViewModel viewModel)
         {
-            _logger.LogDebug("Ingreso al enviar mensaje");
+            _logger.LogDebug("Ingreso a Enviar Mensaje");
 
-            var contacto = new Contacto{
+            var contacto = new Contacto
+            {
                 Name = viewModel.FormContacto.Name,
                 Email = viewModel.FormContacto.Email,
-                Mesagge = viewModel.FormContacto.Mesagge
+                Mesagge = viewModel.FormContacto.Mesagge,
+                Contrasena = viewModel.FormContacto.Contrasena
             };
-                _context.Add(contacto);
-                _context.SaveChanges();
-                ViewData["Message"] = "Se registro el contacto";
+
+            var emailService = new SendMail();
+            await emailService.EnviarCorreoAsync(contacto.Email, "Asunto del correo", contacto.Mesagge,contacto.Contrasena);
+            var __apiKey = Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+
+            //var emailService2 = new SendMailSendGrid();
+            //await emailService2.EnviarCorreoAsync(contacto.Email, "Asunto del correo", contacto.Mesagge,contacto.Contrasena);
+
+
+            _context.Add(contacto);
+            _context.SaveChanges();
+
+            ViewData["Message"] = "Se registro el contacto";
+
             return RedirectToAction(nameof(Index));
         }
 
