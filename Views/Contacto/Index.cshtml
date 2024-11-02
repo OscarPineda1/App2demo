@@ -43,16 +43,14 @@
                             Mesagge
                         </td>
                     </th>
-                    @foreach (var item in Model.ListContactos)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Mesagge)
-                            </td>
-                        </tr>
+                    @if(Model.ListContactos!=null){
+                        @foreach(var item in Model.ListContactos)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Mesagge)</td>
+                            </tr>
+                        }
                     }
                 </table>
             </div>
